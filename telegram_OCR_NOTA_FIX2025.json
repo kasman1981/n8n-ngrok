@@ -1,0 +1,543 @@
+{
+  "name": "telegram_ocr_google_sheets",
+  "nodes": [
+    {
+      "parameters": {
+        "fileName": "/data/input.jpg",
+        "options": {}
+      },
+      "id": "621de8ae-bbaf-43ce-a407-b40c1c9626c4",
+      "name": "Write Binary File",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        -1740,
+        -680
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Mengambil data mentah dan menguraikannya menjadi json",
+        "height": 420,
+        "width": 320,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1440,
+        -800
+      ],
+      "typeVersion": 1,
+      "id": "8359bb2c-4c12-4e73-aa74-a5aaf54fb64b",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "Simpan informasi dalam lembar Google Sheet",
+        "height": 220,
+        "width": 220,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -640,
+        -740
+      ],
+      "typeVersion": 1,
+      "id": "ee6709eb-33e4-48f9-8bc4-bb7f29643640",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1y6MwRS4FwJEy3LkoAfQfsNbQ6dILvkMR_BiIFEtIIVc",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {
+            "balance": "={{ $json.balance }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "date_time",
+              "displayName": "date_time",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "balance",
+              "displayName": "balance",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "location",
+              "displayName": "location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "service",
+              "displayName": "service",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "transaction_id",
+              "displayName": "transaction_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "vehicle_class",
+              "displayName": "vehicle_class",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "amount",
+              "displayName": "amount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "origin_gate",
+              "displayName": "origin_gate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "e_toll_card",
+              "displayName": "e_toll_card",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -580,
+        -680
+      ],
+      "id": "69692648-4dfd-4014-8d4c-4ac562dc0b26",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "31Wl8vbDwiq6szuQ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "=nota_{{ $today.format(\"yyyy-MM-dd_HH-mm-ss\") }}.jpg",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1zISH_SZKcMnpGn3kHNPtuF5dMn0dlCLE",
+          "mode": "list",
+          "cachedResultName": "Myfolder",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1zISH_SZKcMnpGn3kHNPtuF5dMn0dlCLE"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1980,
+        -460
+      ],
+      "id": "3f412561-7428-477f-996c-8f85c049d7b2",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "IcBnA8SaVwSqEVIO",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1400,
+        -500
+      ],
+      "id": "501558c1-aaa1-4caf-a7f8-5cad8fb9bb04",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "KPhFDWG8WLjOvQSb",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {
+          "download": true
+        }
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1980,
+        -680
+      ],
+      "id": "06cf4da5-ed5b-450c-81fe-715b86ce5e25",
+      "name": "Telegram Trigger1",
+      "webhookId": "a58c2777-0fea-45f2-b98c-6e55d395b884",
+      "credentials": {
+        "telegramApi": {
+          "id": "STWqPIUfb9ihmcCC",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Terima gambar atau faktur\n",
+        "height": 200,
+        "width": 220,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2020,
+        -720
+      ],
+      "typeVersion": 1,
+      "id": "931fb48c-ad21-4142-9c3c-19ae944d2500",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "command": "TESSDATA_PREFIX=/data/tessdata tesseract /data/input.jpg stdout --psm 6\n"
+      },
+      "id": "e43380e1-ad63-4d11-85fb-3775357e487b",
+      "name": "Run OCR",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -1580,
+        -680
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Tolong ekstrak informasi dari teks struk tol berikut. Jawab hanya dalam format JSON valid, tanpa tambahan teks atau catatan.\n\nJika informasi tidak tersedia, isi dengan `null`.\n\nFormat JSON yang harus dikembalikan:\n\n{\n  \"date_time\": \"YYYY-MM-DD HH:MM:SS\",\n  \"location\": \"Gerbang keluar / lokasi transaksi\",\n  \"origin_gate\": \"Gerbang asal\",\n  \"transaction_id\": \"Nomor transaksi / referensi / No Seri\",\n  \"e_toll_card\": \"Nomor kartu e-toll\",\n  \"vehicle_class\": \"GOL I / GOL III / Golongan 3, dst\",\n  \"amount\": \"Tarif atau harga\",\n  \"balance\": \"Saldo akhir\",\n  \"bank\": \"Mandiri / BCA / lainnya (jika ada)\",\n  \"operator\": \"ASTRA / MMS / JASAMARGA / Citra Karya / lainnya\"\n}\n\nTeks:\n{{ $json.stdout }}\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        -1400,
+        -680
+      ],
+      "id": "e2f00cd6-51e1-4bee-bb3d-ef151e89ebfb",
+      "name": "LLM Extractor"
+    },
+    {
+      "parameters": {
+        "content": "Tesseract Model",
+        "height": 300,
+        "width": 320
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1780,
+        -800
+      ],
+      "typeVersion": 1,
+      "id": "c3c59b43-fb54-4c94-824d-a5acdde00a70",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Ambil string dari LLM\nlet raw = $json.output;\n\n// Tangkap JSON di antara ```json ... ```\nconst match = raw.match(/```json\\\\s*([\\\\s\\\\S]*?)\\\\s*```/i);\n\n// Kalau ada match, ambil bagian tengahnya\nif (match && match[1]) {\n  raw = match[1].trim();\n}\n\n// Kalau tidak ada, gunakan raw langsung (tapi buang karakter aneh)\nraw = raw.replace(/^```json/, '').replace(/```$/, '').trim();\n\n// Parse JSON\ntry {\n  const parsed = JSON.parse(raw);\n  return parsed;\n} catch (err) {\n  return { error: 'Gagal parse JSON', raw_output: raw, message: err.message };\n}\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1060,
+        -680
+      ],
+      "id": "0b03922d-a9ad-48d7-ad68-d9070c350f53",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e3f5e21d-4aab-4e82-a0f7-aa67a2cbccee",
+              "name": "location",
+              "value": "=={{ $json.location }}",
+              "type": "string"
+            },
+            {
+              "id": "d3f46915-23bb-42db-a0b6-5c48d24ecf72",
+              "name": "service",
+              "value": "=={{ $json.service }}",
+              "type": "string"
+            },
+            {
+              "id": "2928ea67-d381-4af5-b59f-6cb77cad0457",
+              "name": "date_time",
+              "value": "=={{ $json.date_time }}",
+              "type": "string"
+            },
+            {
+              "id": "f8a8c74c-56f0-449b-bbd9-02162f88dcde",
+              "name": "transaction_id",
+              "value": "=={{ $json.transaction_id }}",
+              "type": "string"
+            },
+            {
+              "id": "9141b261-370a-4d7e-95ab-1f7feba9a271",
+              "name": "balance",
+              "value": "=={{ $json.balance }}",
+              "type": "string"
+            },
+            {
+              "id": "99923654-6172-459b-944c-3db5822f8fd6",
+              "name": "vehicle_class",
+              "value": "=={{ $json.vehicle_class}}",
+              "type": "string"
+            },
+            {
+              "id": "82ec3335-2171-4693-b7c6-0e74f1d35459",
+              "name": "amount",
+              "value": "=={{ $json.amount}}",
+              "type": "string"
+            },
+            {
+              "id": "28ebef38-ad91-4af9-b914-b102c5b89cbc",
+              "name": "origin_gate",
+              "value": "=={{ $json.origin_gate}}",
+              "type": "string"
+            },
+            {
+              "id": "b84c1773-7365-41ad-8172-7164da3f5e90",
+              "name": "e_toll_card",
+              "value": "=={{ $json.e_toll_card}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -880,
+        -680
+      ],
+      "id": "eb6e855f-4b85-49b6-9912-bf77ead89d53",
+      "name": "Set Extracted Fields"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger1').item.json.message.chat.id }}",
+        "text": "=Struk berhasil diproses:\n\n📅 Tanggal: {{ $json.date_time }}\n📍 Lokasi: {{ $json.location }}\n🔁 Dari: {{ $json.origin_gate }}\n🚗 Golongan: {{ $json.vehicle_class }}\n💳 e-Toll Card: {{ $json.e_toll_card }}\n💰 Tarif: Rp {{ $json.amount }}\n💰 Saldo: Rp {{ $json.balance }}\n🏦 Bank: {{ $json.bank }}\n📡 Operator: {{ $json.operator }}\n",
+        "additionalFields": {
+          "appendAttribution": false,
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -860,
+        -460
+      ],
+      "id": "cce962e6-09b3-45bd-aa7d-3fe7c5591178",
+      "name": "Send a text message",
+      "webhookId": "be17b091-d2bc-49d6-a0e8-9dbcc6cf4338",
+      "credentials": {
+        "telegramApi": {
+          "id": "STWqPIUfb9ihmcCC",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Write Binary File": {
+      "main": [
+        [
+          {
+            "node": "Run OCR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        []
+      ]
+    },
+    "Upload file": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "LLM Extractor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run OCR": {
+      "main": [
+        [
+          {
+            "node": "LLM Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM Extractor": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Set Extracted Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Extracted Fields": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "231d9eab-f196-4e14-aff1-00e48fb1bdff",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "73053b7b8e5719ac344bc35ed79ffbe3c41f185d3dc9911d668afbd98e370244"
+  },
+  "id": "5kf45dv65llajYFI",
+  "tags": []
+}
