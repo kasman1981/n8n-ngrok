@@ -6,7 +6,7 @@
         "fileName": "/data/input.jpg",
         "options": {}
       },
-      "id": "621de8ae-bbaf-43ce-a407-b40c1c9626c4",
+      "id": "621xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx0c1c9626c4",
       "name": "Write Binary File",
       "type": "n8n-nodes-base.writeBinaryFile",
       "typeVersion": 1,
@@ -44,7 +44,7 @@
         -740
       ],
       "typeVersion": 1,
-      "id": "ee6709eb-33e4-48f9-8bc4-bb7f29643640",
+      "id": "ee6709eb-33xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxbb7f29643640",
       "name": "Sticky Note4"
     },
     {
@@ -52,7 +52,7 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "1y6MwRS4FwJEy3LkoAfQfsNbQ6dILvkMR_BiIFEtIIVc",
+          "value": "1y6MwRS4FwJxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxILvkMR_BiIFEtIIVc",
           "mode": "id"
         },
         "sheetName": {
@@ -169,11 +169,11 @@
         -580,
         -680
       ],
-      "id": "69692648-4dfd-4014-8d4c-4ac562dc0b26",
+      "id": "69692xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx562dc0b26",
       "name": "Append row in sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "31Wl8vbDwiq6szuQ",
+          "id": "31Wlxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx6szuQ",
           "name": "Google Sheets account"
         }
       }
@@ -188,10 +188,10 @@
         },
         "folderId": {
           "__rl": true,
-          "value": "1zISH_SZKcMnpGn3kHNPtuF5dMn0dlCLE",
+          "value": "1zIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxF5dMn0dlCLE",
           "mode": "list",
           "cachedResultName": "Myfolder",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1zISH_SZKcMnpGn3kHNPtuF5dMn0dlCLE"
+          "cachedResultUrl": "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxH_SZKcMnpGn3kHNPtuF5dMn0dlCLE"
         },
         "options": {}
       },
@@ -201,11 +201,11 @@
         -1980,
         -460
       ],
-      "id": "3f412561-7428-477f-996c-8f85c049d7b2",
+      "id": "3f412xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx85c049d7b2",
       "name": "Upload file",
       "credentials": {
         "googleDriveOAuth2Api": {
-          "id": "IcBnA8SaVwSqEVIO",
+          "id": "IcBnxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxVwSqEVIO",
           "name": "Google Drive account"
         }
       }
@@ -226,11 +226,11 @@
         -1400,
         -500
       ],
-      "id": "501558c1-aaa1-4caf-a7f8-5cad8fb9bb04",
+      "id": "501558xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx5cad8fb9bb04",
       "name": "OpenAI Chat Model2",
       "credentials": {
         "openAiApi": {
-          "id": "KPhFDWG8WLjOvQSb",
+          "id": "KPhFDxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxvQSb",
           "name": "OpenAi account"
         }
       }
@@ -250,9 +250,9 @@
         -1980,
         -680
       ],
-      "id": "06cf4da5-ed5b-450c-81fe-715b86ce5e25",
+      "id": "06cf4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx5b86ce5e25",
       "name": "Telegram Trigger1",
-      "webhookId": "a58c2777-0fea-45f2-b98c-6e55d395b884",
+      "webhookId": "a58c277xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx98c-6e55d395b884",
       "credentials": {
         "telegramApi": {
           "id": "STWqPIUfb9ihmcCC",
@@ -280,7 +280,7 @@
       "parameters": {
         "command": "TESSDATA_PREFIX=/data/tessdata tesseract /data/input.jpg stdout --psm 6\n"
       },
-      "id": "e43380e1-ad63-4d11-85fb-3775357e487b",
+      "id": "e43380xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx775357e487b",
       "name": "Run OCR",
       "type": "n8n-nodes-base.executeCommand",
       "typeVersion": 1,
@@ -301,7 +301,7 @@
         -1400,
         -680
       ],
-      "id": "e2f00cd6-51e1-4bee-bb3d-ef151e89ebfb",
+      "id": "e2f00cv-ef15xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx9ebfb",
       "name": "LLM Extractor"
     },
     {
@@ -418,12 +418,12 @@
         -860,
         -460
       ],
-      "id": "cce962e6-09b3-45bd-aa7d-3fe7c5591178",
+      "id": "cce9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx7d-3fe7c5591178",
       "name": "Send a text message",
-      "webhookId": "be17b091-d2bc-49d6-a0e8-9dbcc6cf4338",
+      "webhookId": "be1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe8-9dbcc6cf4338",
       "credentials": {
         "telegramApi": {
-          "id": "STWqPIUfb9ihmcCC",
+          "id": "STWqPIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxihmcCC",
           "name": "Telegram account"
         }
       }
